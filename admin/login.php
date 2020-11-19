@@ -2,7 +2,7 @@
 // session_start();
 include 'includes/config.php';
 include 'code/adminFunctions.php';
-$base_url = 'http://localhost/projects/review/admin/';
+// $base_url = 'http://localhost/projects/review/admin/';
 
 if(isset($_POST['submit'])){
 
