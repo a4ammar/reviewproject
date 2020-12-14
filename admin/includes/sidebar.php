@@ -17,15 +17,15 @@
 					</a>
 					<ul>
 						<li>
-							<a href="#">
-								<span class="title">Users</span>
+							<a href="<?=$base_url;?>view_users.htm">
+								<span class="title">View Users</span>
 							</a>
 						</li>
-						<li>
-							<a href="layout-api.html">
+						<!-- <li>
+							<a href="<?=$base_url;?>add_users.htm">
 								<span class="title">Add Users</span>
 							</a>
-						</li>
+						</li> -->
 					</ul>
 				
 				</li>

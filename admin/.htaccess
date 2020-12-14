@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+	Options +FollowSymlinks
+	RewriteEngine On
+#	ErrorDocument 404 http://www.adv-profit.com/page-not-found.htm
+
+#	RewriteCond %{HTTP_HOST} !^www\.adv-profit\.com/$ [NC]
+#	RewriteRule ^(.*)$ http://www.adv-profit.com/$1 [R=301,L]
+	
+	RewriteRule ^(.*)\.htm$ index.php?page=$1.htm [L,QSA]
+	RewriteRule ^/?(settings)$  index.php?main=settings&page=home [L,QSA]
+	RewriteRule ^/?(settings)/$  index.php?main=settings&page=home [L,QSA]
+	RewriteRule ^/?(settings)/([^./\\"'?#]+)$  index.php?main=settings&page=$2 [L,QSA]
+</IfModule>

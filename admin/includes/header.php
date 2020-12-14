@@ -1,85 +1,6 @@
 <?php
-include 'config.php';
-include 'code/adminFunctions.php';
-
-if(!isset($_SESSION['user_info'])){
-
-	redirect('login');
-}
+include 'includes/sidebar.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="Neon Admin Panel" />
-	<meta name="author" content="" />
-
-	<link rel="icon" href="assets/images/favicon.ico">
-
-	<title>Neon | Dashboard</title>
-
-	<link rel="stylesheet" href="<?php echo $base_url; ?>assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
-	<link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/font-icons/entypo/css/entypo.css">
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic">
-	<link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/bootstrap.css">
-	<link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/neon-core.css">
-	<link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/neon-theme.css">
-	<link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/neon-forms.css">
-	<link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/custom.css">
-
-	<script src="<?php echo $base_url; ?>assets/js/jquery-1.11.3.min.js"></script>
-
-	<!--[if lt IE 9]><script src="<?php echo $base_url; ?>assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-	
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
-
-</head>
-<body class="page-body  page-fade" data-url="http://neon.dev">
-
-<div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
-	
-	<div class="sidebar-menu">
-
-		<div class="sidebar-menu-inner">
-			
-			<header class="logo-env">
-
-				<!-- logo -->
-				<div class="logo">
-					<a href="index.html">
-						<img src="assets/images/logo@2x.png" width="120" alt="" />
-					</a>
-				</div>
-
-				<!-- logo collapse icon -->
-				<div class="sidebar-collapse">
-					<a href="#" class="sidebar-collapse-icon"><!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition -->
-						<i class="entypo-menu"></i>
-					</a>
-				</div>
-
-								
-				<!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
-				<div class="sidebar-mobile-menu visible-xs">
-					<a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
-						<i class="entypo-menu"></i>
-					</a>
-				</div>
-
-			</header>
-			
-								
-			<?php
-			include 'includes/sidebar.php';
-			?>
 			
 		</div>
 
@@ -116,7 +37,12 @@ if(!isset($_SESSION['user_info'])){
 			<div class="col-md-6 col-sm-4 clearfix hidden-xs">
 		
 				<ul class="list-inline links-list pull-right">
-		
+
+					<li>
+						<a href="<?=$base_url;?>profile.php">
+							Profile <i class="entypo-users"></i>
+						</a>
+					</li>
 					<li>
 						<a href="<?=$base_url;?>logout.php">
 							Log Out <i class="entypo-logout right"></i>
@@ -125,7 +51,101 @@ if(!isset($_SESSION['user_info'])){
 				</ul>
 		
 			</div>
+			
+		<div class="row" style="display: none;">
+			<div class="col-sm-8">
 		
+				<div class="panel panel-primary" id="charts_env">
+		
+					<div class="panel-heading">
+						<div class="panel-title">Site Stats</div>
+		
+						<div class="panel-options">
+							<ul class="nav nav-tabs">
+								<li class=""><a href="#area-chart" data-toggle="tab">Area Chart</a></li>
+								<li class="active"><a href="#line-chart" data-toggle="tab">Line Charts</a></li>
+								<li class=""><a href="#pie-chart" data-toggle="tab">Pie Chart</a></li>
+							</ul>
+						</div>
+					</div>
+		
+					<div class="panel-body">
+		
+						<div class="tab-content">
+		
+							<div class="tab-pane" id="area-chart">
+								<div id="area-chart-demo" class="morrischart" style="height: 300px"></div>
+							</div>
+		
+							<div class="tab-pane active" id="line-chart">
+								<div id="line-chart-demo" class="morrischart" style="height: 300px"></div>
+							</div>
+		
+							<div class="tab-pane" id="pie-chart">
+								<div id="donut-chart-demo" class="morrischart" style="height: 300px;"></div>
+							</div>
+		
+						</div>
+		
+					</div>
+		
+					<table class="table table-bordered table-responsive">
+		
+						<thead>
+							<tr>
+								<th width="50%" class="col-padding-1">
+									<div class="pull-left">
+										<div class="h4 no-margin">Pageviews</div>
+										<small>54,127</small>
+									</div>
+									<span class="pull-right pageviews">4,3,5,4,5,6,5</span>
+		
+								</th>
+								<th width="50%" class="col-padding-1">
+									<div class="pull-left">
+										<div class="h4 no-margin">Unique Visitors</div>
+										<small>25,127</small>
+									</div>
+									<span class="pull-right uniquevisitors">2,3,5,4,3,4,5</span>
+								</th>
+							</tr>
+						</thead>
+		
+					</table>
+		
+				</div>
+		
+			</div>
+		
+			<div class="col-sm-4">
+		
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<div class="panel-title">
+							<h4>
+								Real Time Stats
+								<br />
+								<small>current server uptime</small>
+							</h4>
+						</div>
+		
+						<div class="panel-options">
+							<a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a>
+							<a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+							<a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
+							<a href="#" data-rel="close"><i class="entypo-cancel"></i></a>
+						</div>
+					</div>
+		
+					<div class="panel-body no-padding">
+						<div id="rickshaw-chart-demo">
+							<div id="rickshaw-legend"></div>
+						</div>
+					</div>
+				</div>
+		
+			</div>
+		</div>
 		</div>	
 		<hr />
 		<script type="text/javascript">

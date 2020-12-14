@@ -1,6 +1,7 @@
 <?php
-// session_start();
-include 'includes/config.php';
+
+session_start();
+// include 'includes/config.php';
 include 'code/adminFunctions.php';
 // $base_url = 'http://localhost/projects/review/admin/';
 
@@ -11,7 +12,7 @@ if(isset($_POST['submit'])){
 	$result = $code->login($username,$password);
 	if($result == true){
 	
-		echo '<script>window.location.href="'.$base_url.'"</script>';
+		echo '<script>window.location.href="'.$base_url.'index.htm"</script>';
 
 	}else{
 		$msg = "<p>Wrong username or password.</p>";
