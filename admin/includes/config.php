@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+
 $phpfile 	 = explode(".",$_REQUEST["page"]);
 $phpfilename = $phpfile[0].".inc.php";
 $phpcodefile = $phpfile[0].".php";
