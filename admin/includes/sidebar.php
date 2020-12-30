@@ -29,5 +29,12 @@
 					</ul>
 				
 				</li>
+				<li class="active opened active has-sub">
+					<a href="<?php echo  $base_url; ?>preferences.htm">
+						<i class="entypo-layout"></i>
+						<span class="title">Site Preferences</span>
+					</a>
+				
+				</li>
 			
 			</ul>
