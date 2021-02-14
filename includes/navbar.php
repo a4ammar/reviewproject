@@ -2,7 +2,7 @@
 <section class="w3l-bootstrap-header">
   <nav class="navbar navbar-expand-lg navbar-light py-lg-2 py-2">
     <div class="container">
-      <a class="navbar-brand" href="index.html"><span class="">Farm</span>  Planning</a>
+      <a class="navbar-brand" href="index.html"><span class="">Reviews</span></a>
       <!-- if logo is image enable this   
     <a class="navbar-brand" href="#index.html">
         <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
@@ -18,6 +18,9 @@
             <a class="nav-link" href="<?=$base_url;?>home.htm">Home</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="<?=$base_url;?>community.htm">Community</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="<?=$base_url;?>about.htm">About</a>
           </li>
            <li class="nav-item">
@@ -26,12 +29,19 @@
           <li class="nav-item">
             <a class="nav-link" href="<?=$base_url;?>contact.htm">Contact</a>
           </li>
+          
+          <?php if($is_login === TRUE){ ?>
           <li class="nav-item">
-            <a class="nav-link" href="<?=$base_url;?>register.htm">Register</a>
+            <a class="nav-link" href="<?=$base_url;?>logout.htm">Logout</a>
           </li>
+        <?php }else{ ?>
           <li class="nav-item">
             <a class="nav-link" href="<?=$base_url;?>login.htm">Login</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?=$base_url;?>register.htm">Register</a>
+          </li>
+        <?php } ?>
           <li class="nav-item">
             <a class="nav-link" target="_blank" href="<?=$base_url;?>admin/">Admin</a>
           </li>

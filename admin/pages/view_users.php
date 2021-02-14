@@ -8,6 +8,8 @@
 		<table class="table table-bordered datatable" id="table-4">
 			<thead>
 				<tr>
+					<th>No</th>
+					<th>Profle</th>
 					<th>Name</th>
 					<th>Email</th>
 					<th>Phone</th>
@@ -19,10 +21,19 @@
 			</thead>
 			<tbody>
 <?php
+$count = 0;
 while ($users_array = mysqli_fetch_assoc($query)) {
+	if($users_array['profile_image'] != ""){
+		$image_src = $base_url.'assets/images/profile_images/'.$users_array['profile_image'];
+	}else{
+		$image_src = $base_url.'assets/images/site_images/no_profile.jpg';
+
+	}
 ?>
 				<tr class="odd gradeX">
-					<td><?=$users_array['name'];?></td>
+					<td><?=$count;?></td>
+					<td><img src="<?=$image_src;?>" style="height: 150px;width: 150px;"></td>
+					<td><?=$users_array['profile_image'];?></td>
 					<td><?=$users_array['email'];?></td>
 					<td><?=$users_array['phone'];?></td>
 					<td><?=$users_array['address'];?></td>
@@ -42,6 +53,7 @@ while ($users_array = mysqli_fetch_assoc($query)) {
 
 				</tr>
 <?php
+$count++;
 }
 ?>
 			

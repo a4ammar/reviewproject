@@ -29,5 +29,51 @@
 					</ul>
 				
 				</li>
+				<li class="has-sub">
+					<a href="#">
+						<i class="entypo-layout"></i>
+						<span class="title">Manage Services</span>
+					</a>
+					<ul>
+						<li>
+							<a href="<?=$base_url;?>add_services.htm">
+								<span class="title">Add Packages</span>
+							</a>
+						</li>
+						<li>
+							<a href="<?=$base_url;?>view_services.htm">
+								<span class="title">View Packages</span>
+							</a>
+						</li>
+					
+					</ul>
+				
+				</li>				
+				<li class="has-sub">
+					<a href="#">
+						<i class="entypo-layout"></i>
+						<span class="title">Manage Website</span>
+					</a>
+					<ul>
+						<li>
+							<a href="<?=$base_url;?>preferences.htm">
+								<span class="title">Preferences</span>
+							</a>
+						</li>
+						<li>
+							<a href="<?=$base_url;?>slider.htm">
+								<span class="title">Slider</span>
+							</a>
+						</li>
+					</ul>
+				
+				</li>
+				<!-- <li class="active opened active has-sub">
+					<a href="<?php echo  $base_url; ?>preferences.htm">
+						<i class="entypo-layout"></i>
+						<span class="title">Site Preferences</span>
+					</a>
+				
+				</li> -->
 			
 			</ul>

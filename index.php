@@ -1,7 +1,11 @@
 <?php
 include 'includes/config.php';
 include 'code/userFunctions.php';
-
+if(isset($_SESSION['user_detail'])){
+$user_type = $_SESSION['user_detail']['user_type'];
+$user_id = $_SESSION['user_detail']['id'];
+$is_login = TRUE;
+}
 ?>
 <html lang="en">
   <head>
@@ -18,6 +22,17 @@ include 'code/userFunctions.php';
     <!-- //web fonts -->
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?=$base_url;?>assets/css/style-starter.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<!-- <script src="<?=$base_url;?>assets/js/jquery-3.3.1.min.js"></script> -->
+<!-- <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script> -->
+  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+  <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+
+
+
   </head>
 
 <style type="text/css">
@@ -50,7 +65,6 @@ include 'includes/slider.php';
 <?php include_once('includes/footer.php'); ?>
 
 
-<script src="<?=$base_url;?>assets/js/jquery-3.3.1.min.js"></script>
 
 <!-- //footer-28 block -->
 </section>
@@ -79,7 +93,23 @@ include 'includes/slider.php';
 <script src="<?=$base_url;?>assets/js/owl.carousel.js"></script>
 
 <!-- script for -->
-<script>
+
+<!-- <script type="text/javascript">
+  Swal.fire({
+  title: 'Are you sure to delete this record?',
+  showDenyButton: true,
+  showCancelButton: true,
+  confirmButtonText: `Confirm`,
+  denyButtonText: `Cancel`,
+}).then((result) => {
+        if (result.value === true) {
+
+        }else{
+        }
+
+})
+</script>
+ --><script>
   $(document).ready(function () {
     $('.owl-one').owlCarousel({
       loop: true,
@@ -113,7 +143,56 @@ include 'includes/slider.php';
 </script>
 <!-- //script -->
 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  var base_url = "<?=$base_url;?>";
 
+  function purchase(){
+    var package_id = $('#package_id').val();
+    var user_id = $('#user_id').val();
+    var user_email = $('#user_email').val();
+    var post_link = $('#post_link').val();
+    var user_phone = $('#user_phone').val();
+    if(post_link == ''){
+      $('.link_error').css('display','block');
+      return;
+    }else{
+      $('.link_error').css('display','none');
+    }
+
+    if(user_email == ''){
+      $('.email_error').css('display','block');
+      return;
+    }else{
+      $('.email_error').css('display','none');
+    }
+    if(user_phone == ''){
+      $('.phone_error').css('display','block');
+      return;
+    }else{
+      $('.phone_error').css('display','none');
+    }
+
+    $.ajax({
+        type: "POST",
+        data: {package_id: package_id,user_id:user_id,user_email:user_email,user_phone:user_phone,post_link:post_link},
+
+        url: base_url+"pages/ajax_purchase_package.php",
+        success: function(result) 
+        {
+           Swal.fire('Package Purchased Successfully. Admin will contact you soon', '', 'success');
+             setTimeout(function(){
+                  window.location.href="services.htm";
+                   
+              }, 2000);     
+
+        }
+    });
+    // alert(user_id);
+  }
+   // Swal.fire('Changes are not saved', '', 'success');
+  
+</script>
 </body>
 
 </html>

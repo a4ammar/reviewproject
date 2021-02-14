@@ -1,4 +1,6 @@
 <?php
+// error_reporting(E_ALL);
+error_reporting(0);
 $GLOBALS['base_url'] = 'http://localhost/projects/review/';
 $base_url = $GLOBALS['base_url'];
 // define("base_url", "http://localhost/projects/review/");
