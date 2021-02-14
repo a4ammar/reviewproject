@@ -68,6 +68,12 @@ class code
 		// return $query;
 
 	}
+	public function get_orders(){
+			
+		$query = "SELECT * FROM `orders` WHERE isdel = '0'";	
+		$query = mysqli_query($this->conn,$query);
+		return $query;
+	}
 	public function get_packages(){
 			
 		$query = "SELECT * FROM `packages` WHERE isdel = '0'";	

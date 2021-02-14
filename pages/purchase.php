@@ -9,6 +9,10 @@ $image_src = $base_url.'admin/assets/images/package_images/'.$package_detail['im
 }else{
 $image_src = $base_url.'admin/assets/images/site_images/no_profile.jpg';
 }
+$price = $package_detail['price'];
+$price = $price/100 * 10;
+$price = $package_detail['price'] + $price;
+
 }
 else if($is_login !== TRUE){
 	echo '<script>window.location.hreg="'.$base_url.'"</script>';
@@ -42,7 +46,8 @@ else{
              			<label>Package Name</label>
              			<input type="text" name="" class="form-control" value="<?=$package_detail['title']?>" readonly="">
              			<label>Package Price</label>
-             			<input type="text" name="" class="form-control" value="$<?=$package_detail['price']?>" readonly="">
+                   		<span style="color: green;" class="link_error">10% of total will be services charges.</span>
+             			<input type="text" name="" class="form-control" value="$<?=$price;?>" readonly="">
              			<br>
              			<label>Post Link i.e where you want to use our services</label>
              			<br>

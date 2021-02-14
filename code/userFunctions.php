@@ -204,7 +204,10 @@ class code
 		$package_detail = $this->get_package_by_id($package_id);
 		$package_detail = mysqli_fetch_assoc($package_detail);
 
-		$order_price = $package_detail['price'];
+		$price = $package_detail['price'];
+		$price = $price/100 * 10;
+		$order_price = $package_detail['price'] + $price;
+
 		$user_id = $array['user_id'];
 		$user_email = $array['user_email'];
 		$user_phone = $array['user_phone'];

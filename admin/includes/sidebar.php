@@ -32,6 +32,21 @@
 				<li class="has-sub">
 					<a href="#">
 						<i class="entypo-layout"></i>
+						<span class="title">Manage Orders</span>
+					</a>
+					<ul>
+						<li>
+							<a href="<?=$base_url;?>view_orders.htm">
+								<span class="title">view orders</span>
+							</a>
+						</li>
+					
+					</ul>
+				
+				</li>
+				<li class="has-sub">
+					<a href="#">
+						<i class="entypo-layout"></i>
 						<span class="title">Manage Services</span>
 					</a>
 					<ul>
