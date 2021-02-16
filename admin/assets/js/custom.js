@@ -19,7 +19,10 @@ Swal.fire({
         success: function(result) 
         {
               Swal.fire('Deleted!', '', 'success');
-              location.reload();
+              setTimeout(function(){
+               location.reload();
+              }, 2000);  
+              
            
         }
     });

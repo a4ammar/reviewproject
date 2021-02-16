@@ -5,21 +5,21 @@
 			<div class="middle-section grid-column text-center">
 				<div class="three-grids-columns">
 					<span class="fa fa-viadeo"></span>
-					<h4>Natural Products</h4>
-					<p>Auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet</p>
-					<a href="services.html" class="red mt-3">Read More </a>
+					<h4>Facebook</h4>
+					<p>Get likes,comments,shares and reviews on your product</p>
+					<a href="about.htm" class="red mt-3">Read More </a>
 				</div>
 				<div class="three-grids-columns">
 					<span class="fa fa-pagelines"></span>
-					<h4>Wheat Cultivation</h4>
-					<p>Auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet</p>
-					<a href="services.html" class="red mt-3">Read More </a>
+					<h4>Instagram</h4>
+					<p>Get likes,comments,shares and reviews on your product</p>
+					<a href="about.htm" class="red mt-3">Read More </a>
 				</div>
 				<div class="three-grids-columns">
 					<span class="fa fa-apple"></span>
-					<h4>Modern Truck</h4>
-					<p>Auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet</p>
-					<a href="services.html" class="red mt-3">Read More </a>
+					<h4>Buissness Websites</h4>
+					<p>Get likes,comments,shares and reviews on your product</p>
+					<a href="about.htm" class="red mt-3">Read More </a>
 				</div>
 			</div>
 		</div>

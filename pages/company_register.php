@@ -1,11 +1,11 @@
- <?php
+<?php
 include '../includes/header.php';
 include '../includes/navbar.php';
 // include 'includes/slider.php';
 if(isset($_POST['submit'])){
   unset($_POST['submit']);
 
-  $result = $code->register($_POST);
+  $result = $code->register_company($_POST);
   // die();
 }
 ?>
@@ -13,8 +13,8 @@ if(isset($_POST['submit'])){
 <section class="w3l-contact-breadcrum">
   <div class="breadcrum-bg">
     <div class="container py-5">
-      <p><a href="<?php echo base_url; ?>">Home</a> &nbsp; / &nbsp; Register</p>
-      <h2 class="my-3">Register Yourself and become a member of this amazing community. </h2>
+      <p><a href="<?php echo base_url; ?>">Home</a> &nbsp; / &nbsp; Company Registeraton</p>
+      <h3 class="my-3" style="color: white;">Register yourself as a company and add as much as employes under your company. </h3>
     
       <p>Please fillout the form carefully.</p>
     </div>
@@ -42,35 +42,20 @@ if(isset($_POST['submit'])){
             }
           }
           ?>
-           
+          
              <form  method="post" enctype="multipart/form-data">
-                <br>
-              
-
-                <ul>
-                  <li style="color: red;">Please don't fill services if you are sigin as a buyer</li>
-                </ul>
-                <br>
-                <br>
-           
+   
                  <div class="main-input">
                      <div class="d-grid">
-                         <input type="text" name="name" id="name" placeholder="Your Name" class="contact-input" required="">
+                         <input type="text" name="name" id="name" placeholder="Name" class="contact-input" required="">
                          <input type="file" name="image" id="image"  class="contact-input" required="">
-                         
+                         <input type="text" name="decsription" id="decsription" placeholder="Short Decsription" class="contact-input" required="">
                          <input type="text" name="phone" id="phone" placeholder="Phone Number" class="contact-input" required="">
-                         <input type="text" name="country" id="country" placeholder="Country" class="contact-input" required="">
                      </div>
                      <div class="d-grid">
                          <input type="email" name="email" id="w3lSender" placeholder="Your Email id" class="contact-input" required="">
                          <input type="password" name="password" id="w3lSender" placeholder="****" class="contact-input" required="">
                          <input type="text" name="address" id="address" placeholder="Enter Your address" class="contact-input" required="">
-                         <input type="text" name="services" id="services" placeholder="Services you can provide e.g reviews,likes,comments etc" class="contact-input" >
-                         <select class="form-control select" name="user_type" required>
-                           <option value="">Choose Your Type</option>
-                           <option value="0">Seller</option>
-                           <option value="1">Buyer</option>
-                         </select>
                      </div>
                  </div>
             
@@ -80,7 +65,7 @@ if(isset($_POST['submit'])){
                  </div>
              </form>
             <br>
-             <!-- <h6 style="color: green;"><span>Note:</span>If you want to register as a company please click here &nbsp;&nbsp;&nbsp;<a href="<?=$base_url;?>company_register.htm" class="btn btn-secondary ">Click Here</a></h6> -->
+             <h6 style="color: green;"><span>Note:</span>If you want to register as individual please click here &nbsp;&nbsp;&nbsp;<a href="<?=$base_url;?>register.htm" class="btn btn-secondary ">Click Here</a></h6>
          </div>
 
      </div>
