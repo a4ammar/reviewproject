@@ -57,9 +57,12 @@ class code
 		$country = $array['country'];
 		$services = $array['services'];
 		$old_image = $array['image'];
+		$old_password = $array['old_password'];
 
 		if($password != ""){
 		$password = md5($password);
+		}else{
+		$password = $old_password;
 		}
 		//check email already exist
 		// $query = "SELECT * FROM `users` WHERE email = '".$email."'";

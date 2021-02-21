@@ -71,6 +71,7 @@ include './includes/seller_dashboard_navbar.php';
                          <br>
                          <br>
                          <input type="text" name="country" id="country" placeholder="Country" class="contact-input" required="" value="<?=$userdetail['country']?>">
+                          <input type="hidden" name="old_password" value="<?=$userdetail['password'];?>">
                          <input type="password" name="password" id="w3lSender" placeholder="Enter new password" class="contact-input" >
                          <?php if($userdetail['services'] != ""){ ?>
                          <input type="text" name="services" id="services" placeholder="Services you can provide e.g reviews,likes,comments etc" class="contact-input" value="<?=$userdetail['services']?>" >
