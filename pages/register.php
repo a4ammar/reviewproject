@@ -62,7 +62,7 @@ if(isset($_POST['submit'])){
                          <input type="text" name="country" id="country" placeholder="Country" class="contact-input" required="">
                      </div>
                      <div class="d-grid">
-                         <input type="email" name="email" id="w3lSender" placeholder="Your Email id" class="contact-input" required="">
+                         <input type="email" name="email" id="w3lSender" placeholder="Your Email id" class="contact-input" required="" >
                          <input type="password" name="password" id="w3lSender" placeholder="****" class="contact-input" required="">
                          <input type="text" name="address" id="address" placeholder="Enter Your address" class="contact-input" required="">
                          <input type="text" name="services" id="services" placeholder="Services you can provide e.g reviews,likes,comments etc" class="contact-input" >

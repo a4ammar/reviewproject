@@ -31,10 +31,11 @@ while ($data = mysqli_fetch_assoc($slider_images)) {
   </div>
 
 </div>
+<!-- <script src="<?=$base_url;?>assets/js/jquery-3.3.1.min.js"></script> -->
 
 
-  <script src="assets/js/owl.carousel.js"></script>
-  <!-- script for -->
+<!--   <script src="assets/js/owl.carousel.js"></script>
+
   <script>
     $(document).ready(function () {
       $('.owl-one').owlCarousel({
@@ -66,7 +67,6 @@ while ($data = mysqli_fetch_assoc($slider_images)) {
         }
       })
     })
-  </script>
-  <!-- //script -->
-  <!-- /main-slider -->
+  </script> -->
+
 </section>

@@ -11,6 +11,21 @@ class code
         $this->conn = mysqli_connect($server,$username,$password,$db);
   
 	}
+	public function get_packagedetail($id=""){
+
+		$query = "SELECT * FROM `packages` WHERE id = ".$id." and isdel = '0'";	
+		$query = mysqli_query($this->conn,$query);
+		$query = mysqli_fetch_assoc($query);
+		return $query;
+	}
+	public function get_userdetail($id=""){
+
+		$query = "SELECT * FROM `users` WHERE id = ".$id." and isdel = '0'";	
+		$query = mysqli_query($this->conn,$query);
+		$query = mysqli_fetch_assoc($query);
+		return $query;
+	}
+
 	public function add_package($array){
 		$title = $array['title'];
 		$price = $array['price'];

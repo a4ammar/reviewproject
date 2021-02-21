@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 14, 2021 at 03:20 PM
+-- Generation Time: Feb 21, 2021 at 04:48 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 5.6.36
 
@@ -68,6 +68,30 @@ INSERT INTO `companies` (`id`, `user_id`, `company_name`, `isdel`, `created_at`)
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `earning_details`
+--
+
+CREATE TABLE `earning_details` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `task_id` int(11) NOT NULL,
+  `amount` int(9) NOT NULL,
+  `status` int(11) NOT NULL COMMENT '0= withdraw,1 not able to withdraw',
+  `added_on` datetime NOT NULL DEFAULT current_timestamp(),
+  `isdel` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `earning_details`
+--
+
+INSERT INTO `earning_details` (`id`, `user_id`, `order_id`, `task_id`, `amount`, `status`, `added_on`, `isdel`) VALUES
+(1, 8, 1, 1, 1, 0, '2021-02-21 00:00:00', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `orders`
 --
 
@@ -89,7 +113,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `package_id`, `user_email`, `user_phone`, `post_link`, `order_price`, `status`, `added_on`, `isdel`) VALUES
-(1, 5, 1, 'ammar@gmail.com', '03041705101', 'https://stackoverflow.com/questions/18271251/typeerror-ajax-is-not-a-function', '10', 0, '2021-02-14 03:09:00', 0);
+(1, 5, 1, 'ammar@gmail.com', '03041705101', 'https://stackoverflow.com/questions/18271251/typeerror-ajax-is-not-a-function', '11', 0, '2021-02-14 03:09:00', 0);
 
 -- --------------------------------------------------------
 
@@ -192,6 +216,32 @@ INSERT INTO `slider_images` (`id`, `title`, `image`, `added_on`, `isdel`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tasks`
+--
+
+CREATE TABLE `tasks` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `package_id` int(11) NOT NULL,
+  `task_link` text NOT NULL,
+  `task description` text NOT NULL,
+  `status` int(11) NOT NULL COMMENT '0=pending,1=completed',
+  `completed_on` datetime NOT NULL,
+  `added_on` datetime NOT NULL DEFAULT current_timestamp(),
+  `isdel` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tasks`
+--
+
+INSERT INTO `tasks` (`id`, `user_id`, `order_id`, `package_id`, `task_link`, `task description`, `status`, `completed_on`, `added_on`, `isdel`) VALUES
+(1, 8, 1, 1, 'https://stackoverflow.com/questions/18271251/typeerror-ajax-is-not-a-function', 'Provide 1 like,comment and share on this post thankyou', 0, '0000-00-00 00:00:00', '2021-02-21 00:00:00', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -202,6 +252,7 @@ CREATE TABLE `users` (
   `email` text NOT NULL,
   `profile_image` varchar(255) NOT NULL,
   `services` text NOT NULL,
+  `country` text NOT NULL,
   `password` text NOT NULL,
   `address` text NOT NULL,
   `user_type` int(11) NOT NULL COMMENT '0=seller,1=buyer,2=company',
@@ -213,10 +264,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `phone`, `email`, `profile_image`, `services`, `password`, `address`, `user_type`, `isdel`, `created_at`) VALUES
-(1, 'ammar', '12345', 'ammar@gmail.com', '', 'likes,comments,reviews', 'cc03e747a6afbbcbf8be7668acfebee5', 'Plot CB 29/1, Khayaban-e-Sadiq Khayaban E Sadiq, Sargodha, Punjab, Pakistan', 0, 0, '2020-12-14 04:49:05'),
-(5, 'ammar01', '03041705101', 'ammar01@gmail.com', '', 'likes,comments,reviews', 'cc03e747a6afbbcbf8be7668acfebee5', 'Sargodha,Punjab', 1, 0, '2121-02-13 02:35:21'),
-(7, 'test', '12344', 'test1@test.com', '1613228618_images.jpg', 'likes,comments,reviews', 'cc03e747a6afbbcbf8be7668acfebee5', 'Sargodha,Punjab', 0, 0, '2121-02-13 04:03:38');
+INSERT INTO `users` (`id`, `name`, `phone`, `email`, `profile_image`, `services`, `country`, `password`, `address`, `user_type`, `isdel`, `created_at`) VALUES
+(1, 'ammar', '12345', 'ammar@gmail.com', '', 'likes,comments,reviews', '', 'cc03e747a6afbbcbf8be7668acfebee5', 'Plot CB 29/1, Khayaban-e-Sadiq Khayaban E Sadiq, Sargodha, Punjab, Pakistan', 0, 0, '2020-12-14 04:49:05'),
+(5, 'ammar01', '03041705101', 'ammar01@gmail.com', '', 'likes,comments,reviews', '', 'cc03e747a6afbbcbf8be7668acfebee5', 'Sargodha,Punjab', 1, 0, '2121-02-13 02:35:21'),
+(7, 'test', '12344', 'test1@test.com', '1613228618_images.jpg', 'likes,comments,reviews', '', 'cc03e747a6afbbcbf8be7668acfebee5', 'Sargodha,Punjab', 0, 0, '2121-02-13 04:03:38'),
+(8, 'ammar_seller', '03041705101', 'ammar_seller@gmail.com', '1613917705_images.jpg', '', 'Pakistan', '', 'Sargodha,Punjab', 0, 0, '2121-02-21 02:52:03');
 
 --
 -- Indexes for dumped tables
@@ -232,6 +284,12 @@ ALTER TABLE `admin`
 -- Indexes for table `companies`
 --
 ALTER TABLE `companies`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `earning_details`
+--
+ALTER TABLE `earning_details`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -259,6 +317,12 @@ ALTER TABLE `slider_images`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tasks`
+--
+ALTER TABLE `tasks`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -278,6 +342,12 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `companies`
 --
 ALTER TABLE `companies`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `earning_details`
+--
+ALTER TABLE `earning_details`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
@@ -305,10 +375,16 @@ ALTER TABLE `slider_images`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `tasks`
+--
+ALTER TABLE `tasks`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -18,20 +18,15 @@ $is_login = TRUE;
    <!-- web fonts -->
    <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
    <link href="//fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
    <!-- //web fonts -->
     <!-- //web fonts -->
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?=$base_url;?>assets/css/style-starter.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-<!-- <script src="<?=$base_url;?>assets/js/jquery-3.3.1.min.js"></script> -->
-<!-- <script
-  src="https://code.jquery.com/jquery-3.5.1.js"
-  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script> -->
-  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
-  <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
 
   </head>
 
@@ -76,9 +71,10 @@ include 'includes/slider.php';
   });
 </script>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
   integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-</script>
+</script> -->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
   integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
 </script>
@@ -90,26 +86,10 @@ include 'includes/slider.php';
 <script src="<?=$base_url;?>assets/js/all.js"></script>
 <!-- Smooth scrolling -->
 <!-- <script src="assets/js/smoothscroll.js"></script> -->
+
+
 <script src="<?=$base_url;?>assets/js/owl.carousel.js"></script>
-
-<!-- script for -->
-
-<!-- <script type="text/javascript">
-  Swal.fire({
-  title: 'Are you sure to delete this record?',
-  showDenyButton: true,
-  showCancelButton: true,
-  confirmButtonText: `Confirm`,
-  denyButtonText: `Cancel`,
-}).then((result) => {
-        if (result.value === true) {
-
-        }else{
-        }
-
-})
-</script>
- --><script>
+<script>
   $(document).ready(function () {
     $('.owl-one').owlCarousel({
       loop: true,
@@ -142,8 +122,11 @@ include 'includes/slider.php';
   })
 </script>
 <!-- //script -->
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  $("#example").DataTable();
+</script>
 <script type="text/javascript">
   var base_url = "<?=$base_url;?>";
 

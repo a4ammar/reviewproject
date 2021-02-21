@@ -29,8 +29,12 @@
           <li class="nav-item">
             <a class="nav-link" href="<?=$base_url;?>contact.htm">Contact</a>
           </li>
-          
-          <?php if($is_login === TRUE){ ?>
+        <?php if((isset($is_login) && $is_login === TRUE) && (isset($user_type) && $user_type === '0')){ ?>
+          <li class="nav-item">
+            <a class="nav-link" href="<?=$base_url;?>seller_dashboard.htm">Seller Dashboard</a>
+          </li>
+        <?php }?>
+          <?php if(isset($is_login) && $is_login === TRUE){ ?>
           <li class="nav-item">
             <a class="nav-link" href="<?=$base_url;?>logout.htm">Logout</a>
           </li>
