@@ -77,7 +77,7 @@ include './includes/seller_dashboard_navbar.php';
                          <input type="text" name="services" id="services" placeholder="Services you can provide e.g reviews,likes,comments etc" class="contact-input" value="<?=$userdetail['services']?>" >
                           <?php } ?>
                           <div class="text-right">
-                             <button class="btn btn-secondary btn-theme2" type="submit" name="submit">Register</button>
+                             <button class="btn btn-secondary btn-theme2" type="submit" name="submit">Update</button>
                          </div>
                       </div>
 
