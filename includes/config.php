@@ -1,5 +1,5 @@
 <?php
-$GLOBALS['base_url'] = 'http://localhost:8080/project/';
+$GLOBALS['base_url'] = 'http://localhost/projects/review/';
 $base_url = $GLOBALS['base_url'];
 // define("base_url", "http://localhost/projects/review/");
 
